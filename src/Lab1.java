@@ -8,21 +8,41 @@ public class Lab1 {
 //        for(;;);
 
         double s = 0;
-        for (char i = A; i <= N; i++) {
+        boolean isDivisionByZero = false;
+//        try {
+        label1: for (char i = A; i <= N && !isDivisionByZero; i++) {
 //            todo improve
-            if (i == C) {
-                continue;
-            }
+            /*if (i == C) {
+//                    continue;
+//                s = Double.POSITIVE_INFINITY;
+//                s = Math.MAX_VALUE;
+                isDivisionByZero = true;
+                break;
+            }*/
 
             for (char j = B; j <= M; j++) {
+                if (i == C) {
+                    isDivisionByZero = true;
+                    break /*label1*/;
+                    /*System.out.println("Division by zero");
+                    return;*/
+                }
 //                todo add check for j == 0
                 s += (double) (i % j) / (i - C);
             }
         }
-        System.out.println(s);
 
+        if (isDivisionByZero) {
+            System.out.println("Division by zero");
+        } else {
+            System.out.println(s);
+        }
+        /*} catch (ArithmeticException e) {
+            System.out.println("Division by zero");
+        }*/
 
-        System.out.println(1.0 / 0);
+//        System.out.println(-1.0 / 0);
+//        System.out.println(/*(double)*/ 0 / 0);
 
 
 //todo check in C/C++ and C#
