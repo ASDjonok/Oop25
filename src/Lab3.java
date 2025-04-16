@@ -2,14 +2,20 @@ public class Lab3 {
     public static void main(String[] args) {
         String s = "A";
         String s2 = s;
+//        System.out.println(s == s2); // true
         s += 'B';
         String s3 = "AB";
-        System.out.println(s == s2); // false
-        System.out.println(s == s3); //
-        System.out.println(s.equals(s3)); // true
-        System.out.println(s3.equals(s)); // true
-        System.out.println(1 == 1);
-        System.out.println(1 == 2);
+//        System.out.println(s == s2); // false
+        System.out.println(s == s3); // false
+//        System.out.println(s.equals(s3)); // true
+//        System.out.println(s3.equals(s)); // true
+//        System.out.println(1 == 1);
+//        System.out.println(1 == 2);
+
+        String s4 = "AB";
+//        String s5 = "AB";
+        String s5 = new String("AB");
+        System.out.println(s3 == s5);
         /*System.out.println(s);
         System.out.println(s2);*/
         /*System.out.println(s.length());
@@ -17,7 +23,6 @@ public class Lab3 {
         System.out.println(s.indexOf(","));*/
 //        System.out.println(s/*.trim()*/);
 
-//        todo check difference
 //        String s3 = new String("Hello, World!");
 
         StringBuilder sb = new StringBuilder("Hello, World!");
@@ -38,7 +43,25 @@ public class Lab3 {
 //        System.out.println(sbf.trim());
         System.out.println(sbf.charAt(1));*/
 
-//        todo regex
+//        for (;;);
+        /*int a = 0;
+        for (int i = 0; i < 100000000; i++) {
+//            System.out.println(i);
+
+            for (int j = 0; j < 100000000; j++) {
+//            System.out.println(i);
+                a += i + j;
+            }
+//            a += i;
+        }
+        System.out.println(a);*/
+
+//        todo String.split()
+        String s6 = "Hello, World!";
+        String[] s7 = s6.split(" ");
+        for (String s8 : s7) {
+            System.out.println(s8);
+        }
 
     }
 }
