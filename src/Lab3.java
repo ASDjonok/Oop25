@@ -6,7 +6,7 @@ public class Lab3 {
         s += 'B';
         String s3 = "AB";
 //        System.out.println(s == s2); // false
-        System.out.println(s == s3); // false
+//        System.out.println(s == s3); // false
 //        System.out.println(s.equals(s3)); // true
 //        System.out.println(s3.equals(s)); // true
 //        System.out.println(1 == 1);
@@ -15,7 +15,7 @@ public class Lab3 {
         String s4 = "AB";
 //        String s5 = "AB";
         String s5 = new String("AB");
-        System.out.println(s3 == s5);
+//        System.out.println(s3 == s5);
         /*System.out.println(s);
         System.out.println(s2);*/
         /*System.out.println(s.length());
@@ -58,9 +58,16 @@ public class Lab3 {
 
 //        todo String.split()
         String s6 = "Hello, World!";
-        String[] s7 = s6.split(" ");
-        for (String s8 : s7) {
+        String[] splitStrings = s6.split(" ,!");
+        for (String s8 : splitStrings) {
             System.out.println(s8);
+        }
+        String a[] = {"1", "2", "3"};
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
+        }
+        for (String stringElement : a) {
+            System.out.println(stringElement);
         }
 
     }
