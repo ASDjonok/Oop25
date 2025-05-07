@@ -1,4 +1,6 @@
 public class Lab3 {
+    int a = 1;
+
     public static void main(String[] args) {
         String s = "A";
         String s2 = s;
@@ -57,18 +59,18 @@ public class Lab3 {
         System.out.println(a);*/
 
 //        todo String.split()
-        String s6 = "Hello, World!";
-        String[] splitStrings = s6.split(" ,!");
+        String s6 = "Hello, World. I am a student.";
+        String[] splitStrings = s6.split("\\. ?");
         for (String s8 : splitStrings) {
-            System.out.println(s8);
+            System.out.println(s8/*.trim()*/);
         }
-        String a[] = {"1", "2", "3"};
+        /*String a[] = {"1", "2", "3"};
         for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
         }
         for (String stringElement : a) {
             System.out.println(stringElement);
-        }
+        }*/
 
     }
 }
