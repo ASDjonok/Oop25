@@ -1,6 +1,7 @@
 package lab4;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
@@ -28,8 +29,8 @@ public class Main {
         cosmetics[3] = new Cosmetic("Blush", "Pink", 12.99, 25, "BrandD");
         cosmetics[4] = new Cosmetic("Mascara", "Black", 18.99, 40, "BrandE");*/
         Cosmetic[] cosmetics = {
-                new Cosmetic("Lipstick", "Red", 19.99, 50, "BrandA"),
                 new Cosmetic("Foundation", "Beige", 19.99, 30, "BrandB"),
+                new Cosmetic("Lipstick", "Red", 19.99, 50, "BrandA"),
                 new Cosmetic("Eyeliner", "Black", 15.99, 20, "BrandC"),
                 new Cosmetic("Blush", "Pink", 12.99, 25, "BrandD"),
                 new Cosmetic("Mascara", "Black", 18.99, 40, "BrandE")
@@ -53,21 +54,45 @@ public class Main {
             }
             return Double.compare(c1.getPrice(), c2.getPrice());
         });*/
-//        todo analise other interpretations of task (ways of sorting)
-        Arrays.sort(cosmetics, (c1, c2) -> {
+        Arrays.sort(cosmetics/*, (c1, c2) -> {
             if (c1.getPrice() == c2.getPrice()) {
-//                todo fix sort direction
-                return c1.getName().compareTo(c2.getName());
+                return c2.getName().compareTo(c1.getName());
             }
             return Double.compare(c1.getPrice(), c2.getPrice());
-        });
-        System.out.println("Sorted by price:");
+        }*/);
+        //sort by price
+        /*Arrays.sort(cosmetics, (c1, c2) -> {
+            return Double.compare(c1.getPrice(), c2.getPrice());
+        });*/
+//        Arrays.sort(cosmetics, Comparator.comparingDouble(Cosmetic::getPrice));
+
+        System.out.println("Sorted by price and name:");
         for (Cosmetic cosmetic : cosmetics) {
             System.out.println(cosmetic);
         }
 
+        //sort by name
+//        Arrays.sort(cosmetics, (c1, c2) -> c2.getName().compareTo(c1.getName()));
+        /*Arrays.sort(cosmetics, Comparator.comparing(Cosmetic::getName).reversed());
+        System.out.println("Sorted by name:");
+        for (Cosmetic cosmetic : cosmetics) {
+            System.out.println(cosmetic);
+        }*/
 
+        /*byte a = -128;
+        a--;
+        System.out.println(a);*/
 
+        /*Cosmetic cosmetic1 = new Cosmetic("Lipstick", "Red", 19.99, 50, "BrandA");
+        System.out.println(cosmetic1.getName());
+        cosmetic1.setName("Lipstick2");
+        System.out.println(cosmetic1.getName());*/
 
+        String[] strings = {"banana", "apple", "cherry"};
+        Arrays.sort(strings);
+        System.out.println("Sorted strings:");
+        for (String str : strings) {
+            System.out.println(str);
+        }
     }
 }
