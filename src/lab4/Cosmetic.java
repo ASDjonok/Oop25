@@ -1,7 +1,8 @@
 package lab4;
 
-//todo make Comparable
-public class Cosmetic /*implements Comparable<Cosmetic>*/ {
+import java.util.Objects;
+
+public class Cosmetic implements Comparable<Cosmetic> {
 //    todo add equals() and hashCode() methods
 //    todo analise directives of visibility
     private String name;
@@ -54,11 +55,26 @@ public class Cosmetic /*implements Comparable<Cosmetic>*/ {
                 '}';
     }
 
-//    @Override
+    @Override
     public int compareTo(Cosmetic o) {
         if (getPrice() == o.getPrice()) {
             return o.getName().compareTo(getName());
         }
-        return Double.compare(getPrice(), o.getPrice());
+        return Double.compare(/*this.*/getPrice(), o.getPrice());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cosmetic cosmetic = (Cosmetic) o;
+        return Double.compare(price, cosmetic.price) == 0 && quantity == cosmetic.quantity
+                && Objects.equals(name, cosmetic.name) && Objects.equals(color, cosmetic.color)
+                && Objects.equals(brand, cosmetic.brand);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, color, price, quantity, brand);
     }
 }
